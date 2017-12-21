@@ -44,10 +44,4 @@ public class Policeman{
 		suspects.add(suspect);
 		return suspect;
 	}
-	
-	public Long getId() {
-		return id;
-	}
-	
-
 }

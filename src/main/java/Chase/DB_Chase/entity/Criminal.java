@@ -39,7 +39,7 @@ public class Criminal{
 		return collaboration;
 	}
 	
-	public Long getId() {
-		return id;
+	public String getName() {
+		return name;
 	}
 }

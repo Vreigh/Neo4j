@@ -27,7 +27,7 @@ public class DBGenerator {
 		
 		ArrayList<Policeman> policemen = new ArrayList<Policeman>();
 		ArrayList<Criminal> criminals = new ArrayList<Criminal>();
-		
+
 		policemen.add(new Policeman("Grzegorz Pościg", 1353));
 		policemen.add(new Policeman("Marcin Sprawiedliwy", 3234));
 		policemen.add(new Policeman("Jerzy Pomsta", 5732));
@@ -81,10 +81,12 @@ public class DBGenerator {
 		cr.save(criminals);
 		
 		// Przykładowe tworzenie kar (metoda tworząca karę od razu tworzy jej relacje)
+		UniqueCodeGenerator cg = new UniqueCodeGenerator(0, 1000);
+		
 		for(int i=0; i<15; i++) {
 			Policeman randomPoliceman = policemen.get(rn.nextInt(N));
 			Criminal randomCriminal = criminals.get(rn.nextInt(N));
-			Penalty penalty = new Penalty("" + i, getRandomDate(), rn.nextInt(1000), randomPoliceman, randomCriminal);
+			Penalty penalty = new Penalty("" + i, getRandomDate(), cg.get(), randomPoliceman, randomCriminal);
 			penr.save(penalty);
 		}
 		

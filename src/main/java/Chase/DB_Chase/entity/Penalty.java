@@ -31,5 +31,9 @@ public class Penalty {
 		this.punished = punished;
 		this.penaltyId = 25 + (int)(Math.random() * 10000);
 	}
+	
+	public int getPenaltyId() {
+		return penaltyId;
+	}
 
 }
